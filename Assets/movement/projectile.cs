@@ -6,17 +6,12 @@ using UnityEngine;
 
 public class projectile : MonoBehaviour
 {
-public float Speed = 7.0f;
-
-    
-    void Update()
+public float Speed = 11.0f;
+public float range = 20.0f;
+void Update()
     {
-        
-     float distance = Speed * Time.deltaTime;      
-   transform.Translate(-transform.right * distance);
+        float distance = Speed * Time.deltaTime;
+        transform.Translate(-transform.right * distance);
     }
 }
-    
-
-   
 
