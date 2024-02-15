@@ -5,10 +5,12 @@ using UnityEngine;
 public class enemyshoot : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject projectile;
+    public GameObject projectileprefab;
     public Transform blasterposition;
-    public float firrate = 5;
-   
+    public float shootinterval = 3.0f;
+    
+    public float firrate = 0.333f;
+   public float shoottimer = 0.0f;
     void Start()
     {
         
@@ -17,13 +19,18 @@ public class enemyshoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if (Input.GetKey(KeyCode.LeftShift)){
-            Shoot();
-        }
+        
+       shoottimer += Time.deltaTime;
+       if(shoottimer >=1.0f/firrate)
+       {
+        Shoot();
+        shoottimer = 0.0f;
+       }
     }
     public void Shoot(){
-        GameObject projectileSpawn = Instantiate(projectile, blasterposition);
-    
+//GameObject projectileSpawn = Instantiate(projectile, blasterposition);
+     Quaternion rotation = blasterposition.rotation * Quaternion.Euler(-90, 0, 0);
+    Instantiate(projectileprefab,blasterposition.position, blasterposition.rotation);
 
     }
 }
