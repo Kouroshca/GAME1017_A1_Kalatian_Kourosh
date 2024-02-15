@@ -29,8 +29,8 @@ public class enemyshoot : MonoBehaviour
     }
     public void Shoot(){
 //GameObject projectileSpawn = Instantiate(projectile, blasterposition);
-     Quaternion rotation = blasterposition.rotation * Quaternion.Euler(-90, 0, 0);
-    Instantiate(projectileprefab,blasterposition.position, blasterposition.rotation);
+     Quaternion rotation = blasterposition.rotation;
+    Instantiate(projectileprefab,blasterposition.position, rotation);
 
     }
 }

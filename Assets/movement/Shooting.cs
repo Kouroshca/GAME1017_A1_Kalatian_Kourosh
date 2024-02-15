@@ -34,7 +34,7 @@ public class Shooting : MonoBehaviour
     public void shoot(){
         GameObject projectileSpawn=Instantiate(projectile,blasterposition.position,blasterposition.rotation);
         shottimer = timebetweenshots;
-        throw new NotImplementedException();
+        
     }
    
 }
