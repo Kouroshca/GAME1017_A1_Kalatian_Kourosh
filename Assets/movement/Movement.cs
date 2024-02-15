@@ -8,7 +8,7 @@ public class Movement : MonoBehaviour
     public bool DownPressed = false;
     public bool LeftPressed = false;
     public bool RightPressed = false;
-    public float speed = 7.0f;
+    public float speed = 5.0f;
     public Vector2 InputVector;
     
 

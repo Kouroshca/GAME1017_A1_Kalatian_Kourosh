@@ -25,8 +25,6 @@ public class Shooting : MonoBehaviour
         }
         if(Input.GetKey(KeyCode.Space)){
             if(shottimer<=0.0f){
-
-            
             shoot();
             }
         }
