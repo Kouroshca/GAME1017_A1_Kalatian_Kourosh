@@ -116,6 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 2250326400828361143, guid: 86fe41c35e4c34e3ba22dba807b59408, type: 3}
+  speed: 1
 --- !u!1001 &666887196357320114
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -208,7 +209,7 @@ MonoBehaviour:
   projectileprefab: {fileID: 4696710267699808618}
   blasterposition: {fileID: 5805103525401178248}
   shootinterval: 3
-  firrate: 1
+  firrate: 5
   shoottimer: 0
 --- !u!4 &5805103525401178248 stripped
 Transform:
@@ -237,7 +238,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3133681221677698617, guid: bb4afc4d9d571430cae98f803e410477, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.7115969
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 3133681221677698617, guid: bb4afc4d9d571430cae98f803e410477, type: 3}
       propertyPath: m_LocalRotation.x
@@ -245,11 +246,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3133681221677698617, guid: bb4afc4d9d571430cae98f803e410477, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3133681221677698617, guid: bb4afc4d9d571430cae98f803e410477, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.70258796
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 3133681221677698617, guid: bb4afc4d9d571430cae98f803e410477, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -261,11 +262,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3133681221677698617, guid: bb4afc4d9d571430cae98f803e410477, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 270.73
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 5997894224950868612, guid: bb4afc4d9d571430cae98f803e410477, type: 3}
       propertyPath: m_Name
       value: laserRed02
+      objectReference: {fileID: 0}
+    - target: {fileID: 6347533785082195429, guid: bb4afc4d9d571430cae98f803e410477, type: 3}
+      propertyPath: Speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6347533785082195429, guid: bb4afc4d9d571430cae98f803e410477, type: 3}
+      propertyPath: range
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
