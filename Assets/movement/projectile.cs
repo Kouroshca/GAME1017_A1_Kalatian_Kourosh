@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class projectile : MonoBehaviour
+public class Projectile : MonoBehaviour
 {
 public float Speed = 11.0f;
-public float range = 1000.0f;
+public float range = 500.0f;
 void Update()
     {
         float distance = Speed * Time.deltaTime;

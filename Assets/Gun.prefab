@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 1141299243269508954}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.6813, y: 1.2, z: 0}
+  m_LocalPosition: {x: 7.41, y: 4.85, z: 0}
   m_LocalScale: {x: 0.96557677, y: 0.8174572, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -41,7 +41,6 @@ GameObject:
   m_Component:
   - component: {fileID: 256220260314541862}
   - component: {fileID: 3158482236631097928}
-  - component: {fileID: 4596505925094318362}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -59,7 +58,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.2, y: -3.71, z: 0}
-  m_LocalScale: {x: 1, y: 0.9863, z: 1}
+  m_LocalScale: {x: 1.2233061, y: 1.0356506, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 480583316119887684}
@@ -118,21 +117,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4596505925094318362
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4952241220754089921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98a6139fa354546b5bc378934585471f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectile: {fileID: 0}
-  blasterposition: {fileID: 480583316119887684}
-  firrate: 5
 --- !u!1 &6784967425490518922
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,6 +127,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3855256826172674755}
   - component: {fileID: 6884885047826003921}
+  - component: {fileID: 1860379592581775704}
   m_Layer: 0
   m_Name: Gun (1)
   m_TagString: Untagged
@@ -217,3 +202,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1860379592581775704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6784967425490518922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98a6139fa354546b5bc378934585471f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 5287226593518988830, guid: 4d7626ed01785491d8f8272078f557e5, type: 3}
+  blasterposition: {fileID: 480583316119887684}
+  firrate: 7.5

@@ -97,5 +97,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18899b9fb608345878f1c8dd63ea009a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 11
-  range: 150
+  Speed: 7.5
+  range: 15

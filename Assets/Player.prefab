@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2250326400828361143}
   - component: {fileID: 1709959971075169691}
   - component: {fileID: 8790724288821711059}
-  - component: {fileID: 1845106780179372602}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -106,21 +105,6 @@ MonoBehaviour:
   RightPressed: 0
   speed: 5
   InputVector: {x: 0, y: 0}
---- !u!114 &1845106780179372602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 502417129395922715}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98a6139fa354546b5bc378934585471f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectile: {fileID: 0}
-  blasterposition: {fileID: 0}
-  firrate: 5
 --- !u!1001 &464335395295006811
 PrefabInstance:
   m_ObjectHideFlags: 0
