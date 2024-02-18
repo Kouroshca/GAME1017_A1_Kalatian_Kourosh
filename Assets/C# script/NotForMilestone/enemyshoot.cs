@@ -28,14 +28,11 @@ public class enemyshoot : MonoBehaviour
        }
     }
     public void Shoot(){
-//GameObject projectileSpawn = Instantiate(projectile, blasterposition);
+
      Quaternion rotation = blasterposition.rotation;
-     //GameObject projectileSpawn = Instantiate(projectileprefab, blasterposition);
-     //Rigidbody2D projectileRb = projectileSpawn.GetComponent<Rigidbody2D>();
+     
     Quaternion Rotation = blasterposition.rotation;
     Instantiate(projectileprefab,blasterposition.position, rotation);
-     
-     //Instantiate(projectileprefab,blasterposition.position,rotation);
 
     }
 }
