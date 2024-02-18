@@ -7,25 +7,25 @@ public class enemymovement : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] Transform Player;
     [SerializeField] float speed;
-
+    public float range = 15.0f;
     void Awake()
     {
-        // Find and reference the transform of the player when the enemy is spawned.
-
-        // Fınd by the movement compenent
-        // Player = GameObject.FindAnyObjectByType<MovementNew>().transform;
+        
+         Player = GameObject.FindAnyObjectByType<MovementNew>().transform;
 
         // Find by name
-        Player = GameObject.Find("Player").transform;
+       Player = GameObject.Find("Player").transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Vector2.Distance(transform.position, Player.position) < 8.0f)
+        if (Vector3.Distance(transform.position, Player.position) < 20.0f)
         {
             
             transform.Translate(Vector2.left * speed * Time.deltaTime);
+        }else{
+            Destroy(gameObject);
         }
     }
 }
