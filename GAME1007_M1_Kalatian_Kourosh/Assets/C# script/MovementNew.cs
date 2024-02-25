@@ -11,11 +11,6 @@ public class MovementNew : MonoBehaviour
     public float speed = 5.0f;
     public Vector2 InputVector;
     
-    void Start ()
-    {
-
-    }
-    
 
     // Update is called once per frame
    void Update()
@@ -25,31 +20,19 @@ public class MovementNew : MonoBehaviour
        LeftPressed = Input.GetKey(KeyCode.A);
        RightPressed = Input.GetKey(KeyCode.D);
        InputVector = new Vector2(0,0);
-       float dt = Time.deltaTime;
-       Vector3 direction =  Vector3.zero;
-       
        if(DownPressed){
-            //InputVector.y -= 1;
-            transform.position += new Vector3(0.0f,-1.0f,0.0f) * speed *Time.deltaTime; 
+            InputVector.y -= 1;
         }
-       
          if (UpPressed){
-            //InputVector.y +=1;
-            transform.position += new Vector3 (0.0f,1.0f,0.0f)* speed * Time.deltaTime;
+            InputVector.y +=1;
         }
-       
          if (LeftPressed){
-            //InputVector.x -=1;
-            transform.position += new Vector3(-1.0f,0.0f,0.0f) * speed * Time.deltaTime;
-        }
-        if(RightPressed){
-            //InputVector.x +=1;
-            transform.position += new Vector3(1.0f,0.0f,0.0f) * speed * Time.deltaTime;
-
+            InputVector.x -=1;
+        }if(RightPressed){
+            InputVector.x +=1;
         }
     InputVector.Normalize();
     transform.Translate(InputVector*speed * Time.deltaTime);
-
 
     }
    
