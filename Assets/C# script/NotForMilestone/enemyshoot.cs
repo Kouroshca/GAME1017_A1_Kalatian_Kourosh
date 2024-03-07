@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class enemyshoot : MonoBehaviour
@@ -9,7 +10,7 @@ public class enemyshoot : MonoBehaviour
     public Transform blasterposition;
     public float shootinterval = 3.0f;
     
-    public float firrate = 1.333f;
+    public float firrate = 0.5f;
    public float shoottimer = 0.0f;
     void Start()
     {
@@ -21,7 +22,7 @@ public class enemyshoot : MonoBehaviour
     {
         
        shoottimer += Time.deltaTime;
-       if(shoottimer >=1.0f/firrate)
+       if(shoottimer >=1.0f)
        {
         Shoot();
         shoottimer = 0.0f;
@@ -29,10 +30,12 @@ public class enemyshoot : MonoBehaviour
     }
     public void Shoot(){
 
-     Quaternion rotation = blasterposition.rotation;
-     
-    Quaternion Rotation = blasterposition.rotation;
-    Instantiate(projectileprefab,blasterposition.position, rotation);
-
+     //Quaternion rotation = Quaternion.Euler(0.0f,0f,90f);
+     //Quaternion Rotation = blasterposition.rotation;
+    //Instantiate(projectileprefab,blasterposition.position, rotation);
+    Quaternion rotation = blasterposition.rotation;
+    GameObject projectileSpawn = Instantiate(projectileprefab,blasterposition.position,rotation);
+    Rigidbody2D projectileRb = projectileSpawn.GetComponent<Rigidbody2D>();
+    projectileRb.velocity =  new Vector3(-10.0f,0.0f);
     }
 }
