@@ -7,7 +7,8 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
 public float Speed = 11.0f;
-public float range = 100.0f;
+public float range = 15.0f;
+private float damage = 100.0f;
 void Update()
     {
         float distance = Speed * Time.deltaTime;
@@ -19,6 +20,19 @@ void Update()
         {
             Destroy(gameObject);
         }
+    }
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        Debug.Log("var");
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            Enemy enemy = other.gameObject.GetComponent<Enemy>();
+        if(enemy != null)
+            {
+                enemy.TakeDamage(damage);       
+                     }
+        }
+        Destroy(gameObject);
     }
 }
 
