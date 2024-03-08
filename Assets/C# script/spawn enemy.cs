@@ -13,8 +13,8 @@ public class spawnenemy : MonoBehaviour
  public GameObject enemyPrefab;
  public float respanwDelay = 70.0f;
  public float maxX = 7.0f;
- public float maxY = 2.0f;
- public float minX = 0.0f;
+ public float maxY = 1.0f;
+ public float minX = 1.0f;
  public float minY = -5.0f; 
 void Start()
     {
@@ -36,7 +36,6 @@ void Start()
     {
       float randomX = UnityEngine.Random.Range(minX,maxX);
       float randomY = UnityEngine.Random.Range(minY,maxY);
-      //Vector3 spawnPosition = new Vector3(6.0f,-3.0f,0.0f);
       Vector3 spawnPosition = new Vector3(randomX,randomY,0.0f);
       Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
       

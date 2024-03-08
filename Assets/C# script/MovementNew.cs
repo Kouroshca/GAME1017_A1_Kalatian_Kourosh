@@ -29,21 +29,21 @@ public class MovementNew : MonoBehaviour
        Vector3 direction =  Vector3.zero;
        
        if(DownPressed){
-            //InputVector.y -= 1;
+           
             transform.position += new Vector3(0.0f,-1.0f,0.0f) * speed *Time.deltaTime; 
         }
        
          if (UpPressed){
-            //InputVector.y +=1;
+            
             transform.position += new Vector3 (0.0f,1.0f,0.0f)* speed * Time.deltaTime;
         }
        
          if (LeftPressed){
-            //InputVector.x -=1;
+          
             transform.position += new Vector3(-1.0f,0.0f,0.0f) * speed * Time.deltaTime;
         }
         if(RightPressed){
-            //InputVector.x +=1;
+           
             transform.position += new Vector3(1.0f,0.0f,0.0f) * speed * Time.deltaTime;
 
         }

@@ -47,8 +47,8 @@ MonoBehaviour:
   projectileprefab: {fileID: 4335031762752357858, guid: 58f58c3c8d274413a94e08c9ff4505ab, type: 3}
   blasterposition: {fileID: 2118632395965226673}
   shootinterval: 3
-  firrate: 5
-  shoottimer: 0
+  firrate: 0.5
+  shoottimer: 1
 --- !u!1 &8786562176857621177
 GameObject:
   m_ObjectHideFlags: 0
@@ -60,7 +60,6 @@ GameObject:
   - component: {fileID: 6209877023158629941}
   - component: {fileID: 2931784356751944560}
   - component: {fileID: 4530311966309559995}
-  - component: {fileID: 5259512264911872378}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -151,23 +150,6 @@ MonoBehaviour:
   Player: {fileID: 2250326400828361143, guid: 86fe41c35e4c34e3ba22dba807b59408, type: 3}
   speed: 1
   range: 15
---- !u!114 &5259512264911872378
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8786562176857621177}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d44e766da5976460797a8508d8d844d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectileprefab: {fileID: 4335031762752357858, guid: 58f58c3c8d274413a94e08c9ff4505ab, type: 3}
-  blasterposition: {fileID: 2118632395965226673}
-  shootinterval: 3
-  firrate: 0.5
-  shoottimer: 0
 --- !u!1001 &666887196357320114
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -184,6 +166,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: edc51c396c74346c0be94071bf81d444, type: 3}
+    - target: {fileID: 5203554750437701061, guid: b21ffd43e9ed04e3db8c0c0f35e1b059, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6471282034701888826, guid: b21ffd43e9ed04e3db8c0c0f35e1b059, type: 3}
       propertyPath: m_LocalScale.x
       value: -0.9

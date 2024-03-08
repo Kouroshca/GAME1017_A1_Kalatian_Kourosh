@@ -10,7 +10,7 @@ public class enemyshoot : MonoBehaviour
     public Transform blasterposition;
     public float shootinterval = 3.0f;
     
-    public float firrate = 0.5f;
+    public float firrate = 0.3f;
    public float shoottimer = 0.0f;
     void Start()
     {
