@@ -1,6 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
+using JetBrains.Annotations;
+using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
+using Vector2 = UnityEngine.Vector2;
 
 public class MovementNew : MonoBehaviour
 {
@@ -10,47 +15,48 @@ public class MovementNew : MonoBehaviour
     public bool RightPressed = false;
     public float speed = 5.0f;
     public Vector2 InputVector;
-    
-    void Start ()
-    {
+    private Animator animator;
+     public void Start()
+     {
+        animator = GetComponent<Animator>();
 
-    }
-    
-
-    // Update is called once per frame
-   void Update()
+     }
+     
+        
+     
+     void Update()
     {
        UpPressed = Input.GetKey(KeyCode.W);
        DownPressed = Input.GetKey(KeyCode.S);
        LeftPressed = Input.GetKey(KeyCode.A);
        RightPressed = Input.GetKey(KeyCode.D);
-       InputVector = new Vector2(0,0);
-       float dt = Time.deltaTime;
-       Vector3 direction =  Vector3.zero;
-       
-       if(DownPressed){
-           
-            transform.position += new Vector3(0.0f,-1.0f,0.0f) * speed *Time.deltaTime; 
-        }
-       
-         if (UpPressed){
-            
-            transform.position += new Vector3 (0.0f,1.0f,0.0f)* speed * Time.deltaTime;
-        }
-       
-         if (LeftPressed){
-          
-            transform.position += new Vector3(-1.0f,0.0f,0.0f) * speed * Time.deltaTime;
-        }
-        if(RightPressed){
-           
-            transform.position += new Vector3(1.0f,0.0f,0.0f) * speed * Time.deltaTime;
+       InputVector = Vector2.zero;
 
+        if (UpPressed)
+        {
+            InputVector += Vector2.up;
         }
+        if (DownPressed)
+        {
+            InputVector += Vector2.down;
+        }
+        if (LeftPressed)
+        {
+            InputVector += Vector2.left;
+        }
+        if (RightPressed)
+        {
+            InputVector += Vector2.right;
+        }
+
+
+
     InputVector.Normalize();
+    
+    animator.SetFloat("x.Input", InputVector.x);
+    animator.SetFloat("y.Input", InputVector.y);
     transform.Translate(InputVector*speed * Time.deltaTime);
-
-
+  
     }
-   
+  
 }
