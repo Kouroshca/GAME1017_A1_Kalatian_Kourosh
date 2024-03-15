@@ -16,21 +16,21 @@ public class MovementNew : MonoBehaviour
     public float speed = 5.0f;
     public Vector2 InputVector;
     private Animator animator;
-     public void Start()
-     {
+    public void Start()
+    {
         animator = GetComponent<Animator>();
 
-     }
-     
-        
-     
-     void Update()
+    }
+
+
+
+    void Update()
     {
-       UpPressed = Input.GetKey(KeyCode.W);
-       DownPressed = Input.GetKey(KeyCode.S);
-       LeftPressed = Input.GetKey(KeyCode.A);
-       RightPressed = Input.GetKey(KeyCode.D);
-       InputVector = Vector2.zero;
+        UpPressed = Input.GetKey(KeyCode.W);
+        DownPressed = Input.GetKey(KeyCode.S);
+        LeftPressed = Input.GetKey(KeyCode.A);
+        RightPressed = Input.GetKey(KeyCode.D);
+        InputVector = Vector2.zero;
 
         if (UpPressed)
         {
@@ -51,12 +51,12 @@ public class MovementNew : MonoBehaviour
 
 
 
-    InputVector.Normalize();
-    
-    animator.SetFloat("x.Input", InputVector.x);
-    animator.SetFloat("y.Input", InputVector.y);
-    transform.Translate(InputVector*speed * Time.deltaTime);
-  
+        InputVector.Normalize();
+
+        animator.SetFloat("x.Input", InputVector.x);
+        animator.SetFloat("y.Input", InputVector.y);
+        transform.Translate(InputVector * speed * Time.deltaTime);
+
     }
-  
+
 }

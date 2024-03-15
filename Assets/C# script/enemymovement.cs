@@ -12,7 +12,7 @@ public class enemymovement : MonoBehaviour
     private Vector3 initialPosition;
     void Awake()
     {
-        
+
         initialPosition = transform.position;
         Player = GameObject.FindAnyObjectByType<MovementNew>().transform;
         // Find by name
@@ -24,9 +24,11 @@ public class enemymovement : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, Player.position) < range)
         {
-            
+
             transform.Translate(Vector2.left * speed * Time.deltaTime);
-        }else{
+        }
+        else
+        {
             Destroy(gameObject);
             StartCoroutine(RespawnEnemy());
         }
@@ -34,7 +36,7 @@ public class enemymovement : MonoBehaviour
     IEnumerator RespawnEnemy()
     {
         yield return new WaitForSeconds(respawnDelay);
-        GameObject newEnemy = Instantiate(gameObject,initialPosition, Quaternion.identity);
+        GameObject newEnemy = Instantiate(gameObject, initialPosition, Quaternion.identity);
         Destroy(newEnemy.GetComponent<enemymovement>());
     }
 }
