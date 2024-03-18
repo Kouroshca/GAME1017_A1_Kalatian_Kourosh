@@ -8,7 +8,8 @@ public class Projectile : MonoBehaviour
 {
     public float Speed = 11.0f;
     public float range = 15.0f;
-    public int attackValue = 10;
+    public int attackValue = 1;
+    
     private object other;
 
     void Update()
@@ -36,6 +37,18 @@ public class Projectile : MonoBehaviour
             }
         }
         Destroy(gameObject);
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Damagable target = collision.GetComponent<Damagable>();
+        if (!target)
+        {
+            return;
+        }
+        target.TakeDamage(attackValue);
+        Destroy(gameObject);
+
+
     }
 
 }

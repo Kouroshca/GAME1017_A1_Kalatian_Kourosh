@@ -7,10 +7,8 @@ using UnityEngine;
 public class Projectile2 : MonoBehaviour
 {
 
-    public float speed = 3.0f;
+    public float speed = 2.0f;
     public float range = 10;
-
-
     void Update()
     {
         float distance = speed * Time.deltaTime;
