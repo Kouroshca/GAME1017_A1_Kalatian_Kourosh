@@ -6,7 +6,7 @@ using UnityEngine.PlayerLoop;
 
 public class Enemy : MonoBehaviour
 {
-    public int maxHelath = 100;
+    private int maxHelath = 4;
     private int currentHealth;
 
     void Start()
@@ -14,7 +14,6 @@ public class Enemy : MonoBehaviour
         InitializationHealth();
     }
 
-    // Update is called once per frame
 
     void InitializationHealth()
     {

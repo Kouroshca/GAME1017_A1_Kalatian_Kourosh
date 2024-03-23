@@ -1,20 +1,29 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Damage : MonoBehaviour
 {
-    // Start is called before the first frame update
+  
     [SerializeField]
-    private int Hitpoint = 2;
-    public void TakeDamage(int attackValue)
+    
+    private int HitpointEnemy = 2;
+    public void TakeDamage(int attackValuePlayer)
     {
-        Hitpoint -= attackValue;
-        if (Hitpoint <= 0)
+        HitpointEnemy -= attackValuePlayer;
+        if (HitpointEnemy <= 0)
         {
             Die();
         }
     }
+
+    internal void TakeDamagePlayer(int attackValue)
+    {
+        throw new NotImplementedException();
+    }
+
     void Die()
     {
         Destroy(gameObject);

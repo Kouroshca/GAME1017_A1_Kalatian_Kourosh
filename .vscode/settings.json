@@ -56,5 +56,6 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Assignment.sln"
+    "dotnet.defaultSolution": "Assignment.sln",
+    "cmake.configureOnOpen": true
 }

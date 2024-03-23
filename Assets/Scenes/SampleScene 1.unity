@@ -413,7 +413,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 11
   range: 20
-  attackValue: 10
 --- !u!1 &1164669011
 GameObject:
   m_ObjectHideFlags: 0
@@ -718,9 +717,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1703625562}
   - component: {fileID: 1703625561}
-  - component: {fileID: 1703625565}
   - component: {fileID: 1703625564}
   - component: {fileID: 1703625563}
+  - component: {fileID: 1703625565}
   m_Layer: 0
   m_Name: cup
   m_TagString: Untagged
@@ -876,10 +875,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1703625560}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87a3f10c7167041139c76e9100777fa8, type: 3}
+  m_Script: {fileID: 11500000, guid: faac4abe995ef42b882234a4dc2f7e2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HitPoint: 1
+  Hitpoint: 8
 --- !u!1 &2061361829
 GameObject:
   m_ObjectHideFlags: 0
