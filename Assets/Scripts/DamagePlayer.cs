@@ -18,5 +18,9 @@ public class DamageP : MonoBehaviour
     {
         Destroy(gameObject);
     }
+    public bool Alive
+    {
+        get{ return HitPointPlayer>0;}
+    }
 
 }

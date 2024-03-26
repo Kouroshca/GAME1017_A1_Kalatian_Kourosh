@@ -49,5 +49,6 @@ public class Enemy : MonoBehaviour
     internal void TakeDamage(float damage)
     {
         throw new NotImplementedException();
+        
     }
 }

@@ -10,12 +10,18 @@ public class Damage : MonoBehaviour
     [SerializeField]
     
     private int HitpointEnemy = 2;
+    public Animator animator;
+    void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
     public void TakeDamage(int attackValuePlayer)
     {
         HitpointEnemy -= attackValuePlayer;
         if (HitpointEnemy <= 0)
         {
             Die();
+            
         }
     }
 
@@ -26,6 +32,14 @@ public class Damage : MonoBehaviour
 
     void Die()
     {
-        Destroy(gameObject);
+        
+        if (gameObject != null)
+        {
+          animator.SetTrigger("Died");
+        }else
+        {
+            Destroy(gameObject);
+        }
+        
     }
 }

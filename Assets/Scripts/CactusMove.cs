@@ -2,27 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class enemymovement : MonoBehaviour
+public class CactusMove : MonoBehaviour
 {
-    // Start is called before the first frame update
     [SerializeField] Transform Player;
     [SerializeField] float speed;
     public float range = 15.0f;
     private float respawnDelay = 0.0f;
     private Vector3 initialPosition;
-    public Animator animator; 
     void Awake()
     {
 
         initialPosition = transform.position;
         Player = GameObject.FindAnyObjectByType<MovementNew>().transform;
-        // Find by name
+  
         Player = GameObject.Find("Player").transform;
-        
-    
-        animator = GetComponent<Animator>();
-
-    
     }
 
     // Update is called once per frame
@@ -32,7 +25,6 @@ public class enemymovement : MonoBehaviour
         {
 
             transform.Translate(Vector2.left * speed * Time.deltaTime);
-
         }
         else
         {
