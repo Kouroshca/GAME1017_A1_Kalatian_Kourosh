@@ -6,9 +6,9 @@ using UnityEngine;
 
 public class Damage : MonoBehaviour
 {
-  
+
     [SerializeField]
-    
+
     private int HitpointEnemy = 2;
     public Animator animator;
     void Start()
@@ -21,25 +21,25 @@ public class Damage : MonoBehaviour
         if (HitpointEnemy <= 0)
         {
             Die();
-            
+
         }
     }
 
-    internal void TakeDamagePlayer(int attackValue)
+    /*internal void TakeDamagePlayer(int attackValue)
     {
         throw new NotImplementedException();
-    }
+    }*/
 
     void Die()
     {
-        
+
         if (gameObject != null)
         {
-          animator.SetTrigger("Died");
-        }else
-        {
-            Destroy(gameObject);
+            animator.SetTrigger("Died");
+            ScoreScript.scoreValue += 10;
+            Destroy(gameObject, 0.5f);
+
+
         }
-        
     }
 }

@@ -11,7 +11,7 @@ public class enemyshoot : MonoBehaviour
     public float shootinterval = 3.0f;
 
     public float firrate = 0.3f;
-    public float shoottimer = 0.0f;
+    public float shoottimer = 1.0f;
     void Update()
     {
 
