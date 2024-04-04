@@ -10,6 +10,8 @@ public class Shooting : MonoBehaviour
     public float firrate = 5;
     private float timebetweenshots = 1.0f / 5.0f;
     private float shottimer = 0.0f; // when we can shoot again
+    [SerializeField]
+    private AudioSource shootsound;
 
     void Start()
     {
@@ -36,9 +38,12 @@ public class Shooting : MonoBehaviour
 
     public void shoot()
     {
+        if(shootsound != null)
+        {
+            shootsound.Play();
+        }
         GameObject projectileSpawn = Instantiate(projectile, blasterposition.position, blasterposition.rotation);
         shottimer = timebetweenshots;
-
     }
 
 }

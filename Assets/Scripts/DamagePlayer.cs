@@ -8,12 +8,19 @@ public class DamageP : MonoBehaviour
     private int HitPointPlayer = 10;
     public Animator animator;
     bool PlayerAlive = true; 
+    
+    [SerializeField]
+    AudioSource hitsound;
     void Start()
     {
          animator = GetComponent<Animator>();
     }
     public void TakeDamagePlayer(int AttackValueEnemy)
     {
+        if (hitsound != null){
+        hitsound.Play();
+      
+        }
         HitPointPlayer -= AttackValueEnemy;
         Helath.health = HitPointPlayer;
         if (HitPointPlayer <= 0)

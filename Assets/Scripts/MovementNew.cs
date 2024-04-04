@@ -16,16 +16,15 @@ public class MovementNew : MonoBehaviour
     public float speed = 5.0f;
     public Vector2 InputVector;
     private Animator animator;
+    [SerializeField]
+    private AudioSource jumpSound;
     public void Start()
     {
         animator = GetComponent<Animator>();
 
     }
-
-
-
     void Update()
-    {
+        {
         UpPressed = Input.GetKey(KeyCode.W);
         DownPressed = Input.GetKey(KeyCode.S);
         LeftPressed = Input.GetKey(KeyCode.A);
@@ -34,7 +33,10 @@ public class MovementNew : MonoBehaviour
 
         if (UpPressed)
         {
+            
             InputVector += Vector2.up;
+      
+            
         }
         if (DownPressed)
         {

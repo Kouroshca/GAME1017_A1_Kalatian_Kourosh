@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.SocialPlatforms.Impl;
 
 
 public class Damage : MonoBehaviour
@@ -11,6 +13,7 @@ public class Damage : MonoBehaviour
 
     private int HitpointEnemy = 2;
     public Animator animator;
+    public UnityEvent<int> OnDieEvent;
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -33,13 +36,11 @@ public class Damage : MonoBehaviour
     void Die()
     {
 
+        OnDieEvent.Invoke(ScoreScript.scoreValue);
         if (gameObject != null)
         {
             animator.SetTrigger("Died");
-            ScoreScript.scoreValue += 10;
             Destroy(gameObject, 0.5f);
-
-
         }
     }
 }
