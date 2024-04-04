@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DamageP : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class DamageP : MonoBehaviour
     private int HitPointPlayer = 10;
     public Animator animator;
     bool PlayerAlive = true;
+
+    public UnityEvent onDeathEvent;
 
     [SerializeField]
     AudioSource hitsound;
@@ -25,21 +28,24 @@ public class DamageP : MonoBehaviour
         Helath.health = HitPointPlayer;
         if (HitPointPlayer <= 0)
         {
-            DiePlayer();
-
+            //PlayDeathAnimation();
+            Die();
         }
     }
-    void DiePlayer()
+
+    public void PlayDeathAnimation()
     {
+       animator.SetTrigger("Death_player");
+    }
+
+    void Die()
+    {
+        //gameObject.SetActive(false);
         if (PlayerAlive)
         {
-            animator.SetTrigger("Death_player");
             PlayerAlive = false;
-
-        }
-        else if (!PlayerAlive)
-        {
-
+            onDeathEvent.Invoke();
         }
     }
+
 }
