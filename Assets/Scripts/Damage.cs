@@ -36,7 +36,7 @@ public class Damage : MonoBehaviour
     void Die()
     {
 
-        OnDieEvent.Invoke(ScoreScript.scoreValue);
+        ScoreScript.scoreValue += 10;
         if (gameObject != null)
         {
             animator.SetTrigger("Died");
