@@ -14,6 +14,9 @@ public class Damage : MonoBehaviour
     private int HitpointEnemy = 2;
     public Animator animator;
     public UnityEvent<int> OnDieEvent;
+    
+    [SerializeField]
+    AudioSource Explosion;
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -36,11 +39,13 @@ public class Damage : MonoBehaviour
     void Die()
     {
         
-        ScoreScript.scoreValue += 10;
+        OnDieEvent.Invoke(ScoreScript.scoreValue += 10);
+     
         if (gameObject != null)
         {
             animator.SetTrigger("Died");
             Destroy(gameObject, 0.5f);
+            Explosion.Play();
         }
     }
 }
