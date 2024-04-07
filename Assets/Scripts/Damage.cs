@@ -35,7 +35,7 @@ public class Damage : MonoBehaviour
 
     void Die()
     {
-
+        
         ScoreScript.scoreValue += 10;
         if (gameObject != null)
         {
