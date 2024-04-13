@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class DamageP : MonoBehaviour
 {
     [SerializeField]
-    private int HitPointPlayer = 10;
+    public int HitPointPlayer = 10;
     public Animator animator;
     bool PlayerAlive = true;
 
@@ -27,6 +27,7 @@ public class DamageP : MonoBehaviour
         }
         HitPointPlayer -= AttackValueEnemy;
         Helath.health = HitPointPlayer;
+        
         if (HitPointPlayer <= 0)
         {
 
@@ -48,6 +49,7 @@ public class DamageP : MonoBehaviour
             onDeathEvent.Invoke();
         }
     }
+    
     public void EndGame()
     {
         SceneManager.LoadScene("GameOver");
