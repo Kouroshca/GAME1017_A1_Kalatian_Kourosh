@@ -50,12 +50,12 @@ public class enemymovement : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-            DamageP player = other.GetComponent<DamageP>();
-        if (!player)
+            DamageP jerry = other.GetComponent<DamageP>();
+        if (!jerry)
         {
             return;
         }
-        player.TakeDamagePlayer(2);
+        jerry.TakeDamagePlayer(2);
         Destroy(gameObject);
     }
 }

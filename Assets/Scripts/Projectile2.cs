@@ -23,12 +23,12 @@ public class Projectile2 : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        DamageP player = other.GetComponent<DamageP>();
-        if (!player)
+        DamageP jerry = other.GetComponent<DamageP>();
+        if (!jerry)
         {
             return;
         }
-        player.TakeDamagePlayer(AttackValueEnemy);
+        jerry.TakeDamagePlayer(AttackValueEnemy);
         Destroy(gameObject);
     }
 }
