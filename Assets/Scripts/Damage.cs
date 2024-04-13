@@ -30,13 +30,7 @@ public class Damage : MonoBehaviour
 
         }
     }
-
-    /*internal void TakeDamagePlayer(int attackValue)
-    {
-        throw new NotImplementedException();
-    }*/
-
-    void Die()
+     void Die()
     {
         
         OnDieEvent.Invoke(ScoreScript.scoreValue += 10);

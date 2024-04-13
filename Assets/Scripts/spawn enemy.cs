@@ -13,7 +13,7 @@ public class spawnenemy : MonoBehaviour
  public GameObject enemyPrefab;
  public float respanwDelay = 70.0f;
  public float maxX = 7.0f;
- public float maxY = 1.0f;
+ public float maxY = -3.0f;
  public float minX = 1.0f;
  public float minY = -5.0f; 
 void Start()

@@ -9,6 +9,7 @@ public class CactusMove : MonoBehaviour
     public float range = 15.0f;
     private float respawnDelay = 0.0f;
     private Vector3 initialPosition;
+    private int HitPoint = 2;
     void Awake()
     {
 
@@ -17,8 +18,7 @@ public class CactusMove : MonoBehaviour
   
         Player = GameObject.Find("Player").transform;
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         if (Vector3.Distance(transform.position, Player.position) < range)
@@ -38,4 +38,22 @@ public class CactusMove : MonoBehaviour
         GameObject newEnemy = Instantiate(gameObject, initialPosition, Quaternion.identity);
         Destroy(newEnemy.GetComponent<enemymovement>());
     }
+    public void TakeDamage(int attackValuePlayer)
+    {
+        HitPoint -= attackValuePlayer;
+        if (HitPoint <= 0 ){
+            Destroy(gameObject);
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+       DamageP jerry = other.GetComponent<DamageP>();
+          if (!jerry)
+        {
+            return;
+        }
+        jerry.TakeDamagePlayer(1);
+        Destroy(gameObject);
+    }
+    
 }

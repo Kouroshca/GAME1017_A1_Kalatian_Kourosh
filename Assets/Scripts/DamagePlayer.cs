@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class DamageP : MonoBehaviour
 {
@@ -28,24 +29,27 @@ public class DamageP : MonoBehaviour
         Helath.health = HitPointPlayer;
         if (HitPointPlayer <= 0)
         {
-            //PlayDeathAnimation();
+
             Die();
         }
     }
 
     public void PlayDeathAnimation()
     {
-       animator.SetTrigger("Death_player");
+        animator.SetTrigger("Death_player");
     }
 
     void Die()
     {
-        //gameObject.SetActive(false);
+
         if (PlayerAlive)
         {
             PlayerAlive = false;
             onDeathEvent.Invoke();
         }
     }
-
+    public void EndGame()
+    {
+        SceneManager.LoadScene("GameOver");
+    }
 }

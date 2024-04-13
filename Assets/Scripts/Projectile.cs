@@ -34,9 +34,6 @@ public class Projectile : MonoBehaviour
         }
         target.TakeDamage(attackValuePlayer);
         Destroy(gameObject);
-        
-
     }
-
 }
 

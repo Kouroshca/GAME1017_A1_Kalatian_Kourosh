@@ -11,6 +11,8 @@ public class enemymovement : MonoBehaviour
     private float respawnDelay = 0.0f;
     private Vector3 initialPosition;
     public Animator animator; 
+    
+    
     void Awake()
     {
 
@@ -45,5 +47,15 @@ public class enemymovement : MonoBehaviour
         yield return new WaitForSeconds(respawnDelay);
         GameObject newEnemy = Instantiate(gameObject, initialPosition, Quaternion.identity);
         Destroy(newEnemy.GetComponent<enemymovement>());
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+            DamageP player = other.GetComponent<DamageP>();
+        if (!player)
+        {
+            return;
+        }
+        player.TakeDamagePlayer(2);
+        Destroy(gameObject);
     }
 }
