@@ -9,4 +9,8 @@ public class PlayGame : MonoBehaviour
    {
         SceneManager.LoadScene("Game");
    }
+   public void GameSetthings()
+   {
+      SceneManager.LoadScene("Settings");
+   }
 }
