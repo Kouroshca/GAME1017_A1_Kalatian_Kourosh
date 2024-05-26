@@ -13,4 +13,5 @@ public class PlayGame : MonoBehaviour
    {
       SceneManager.LoadScene("Settings");
    }
+   
 }
