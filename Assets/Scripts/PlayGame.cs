@@ -13,5 +13,17 @@ public class PlayGame : MonoBehaviour
    {
       SceneManager.LoadScene("Settings");
    }
+
+   void Update()
+   {
+      if (Input.GetKeyDown(KeyCode.Escape))
+      {
+         SceneManager.LoadScene("PauseScene");
+      if (Input.GetKeyDown(KeyCode.Return))
+      {
+         SceneManager.LoadScene("Game");
+      }
+      }
+   }
    
 }

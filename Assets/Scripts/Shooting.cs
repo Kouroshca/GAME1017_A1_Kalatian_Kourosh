@@ -26,7 +26,7 @@ public class Shooting : MonoBehaviour
         {
             shottimer = 0.0f;
         }
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetMouseButton(0))
         {
             if (shottimer <= 0.0f)
             {
