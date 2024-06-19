@@ -227,9 +227,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileprefab: {fileID: 4335031762752357858, guid: 58f58c3c8d274413a94e08c9ff4505ab, type: 3}
   blasterposition: {fileID: 2118632395965226673}
-  shootinterval: 3
-  firrate: 0.5
-  shoottimer: 1
 --- !u!1 &8786562176857621177
 GameObject:
   m_ObjectHideFlags: 0
@@ -471,7 +468,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a97f590750fba40f786ff16524956567, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c26e7b496751f4632a461ae03feccf73, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
