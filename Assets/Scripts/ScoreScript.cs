@@ -1,4 +1,4 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -8,7 +8,7 @@ public class ScoreScript : MonoBehaviour
 {
       public TextMeshProUGUI scoreText;
     public TextMeshProUGUI highScoreText;
-    public static int scoreValue = 0;
+    public static int scoreValue;
     private static int highScore;
 
     void Start()

@@ -529,63 +529,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8dba9964c026452fb077e4b909254df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &873187768
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 873187770}
-  - component: {fileID: 873187769}
-  m_Layer: 5
-  m_Name: PlayerHearts
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &873187769
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 873187768}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91e449a033f834038ac023b4f4724073, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 4
-  numOfHearts: 4
-  hearts:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  fullHearts: {fileID: 21300000, guid: 0f7a1d38c82424282a3d5032e877379c, type: 3}
-  emptyHears: {fileID: 21300000, guid: f4df41923380a4df3bedf2329045940e, type: 3}
---- !u!224 &873187770
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 873187768}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 512, y: 384}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &908236464 stripped
 BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 863690942970857935, guid: 86fe41c35e4c34e3ba22dba807b59408, type: 3}
@@ -1452,6 +1395,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2061361831}
   - component: {fileID: 2061361830}
+  - component: {fileID: 2061361832}
   m_Layer: 0
   m_Name: enemyspawner
   m_TagString: Untagged
@@ -1492,6 +1436,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2061361832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061361829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 067a11fad8ca4463d9e7a6f0bdd787c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 7863583663762698268, guid: 0e93c56a8b7b14980bed72f8c2cf64ab, type: 3}
+  respanwDelay: 10
+  maxX: 7
+  maxY: 4
+  minX: 0
+  minY: -4
 --- !u!1001 &1680629664774345940
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1685,7 +1647,6 @@ SceneRoots:
   - {fileID: 749630944}
   - {fileID: 1213584054}
   - {fileID: 1085760917}
-  - {fileID: 873187770}
   - {fileID: 1465661099}
   - {fileID: 1170153741}
   - {fileID: 2018090901}
