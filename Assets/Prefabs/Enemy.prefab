@@ -392,6 +392,7 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
   Explosion: {fileID: 3832898268148170496}
+  heartPrefab: {fileID: 8927959048811619379, guid: cee256e1be5a7420e9d26968857ac47e, type: 3}
 --- !u!61 &4178186672956276044
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -1,45 +1,70 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.SocialPlatforms.Impl;
-
 
 public class Damage : MonoBehaviour
 {
-
     [SerializeField]
-
     private int HitpointEnemy = 2;
     public Animator animator;
     public UnityEvent<int> OnDieEvent;
-    
     [SerializeField]
-    AudioSource Explosion;
+    private AudioSource Explosion;
+    private DamageP damageP;
+
+    [SerializeField]
+    private GameObject heartPrefab; // Add a reference to the heart prefab
+
     void Start()
     {
         animator = GetComponent<Animator>();
+        if (OnDieEvent == null)
+        {
+            OnDieEvent = new UnityEvent<int>();
+        }
+        if (Explosion == null)
+        {
+            Explosion = GetComponent<AudioSource>();
+        }
     }
+
     public void TakeDamage(int attackValuePlayer)
     {
         HitpointEnemy -= attackValuePlayer;
         if (HitpointEnemy <= 0)
         {
             Die();
-
         }
     }
-     void Die()
+
+    void Die()
     {
-        
-        OnDieEvent.Invoke(ScoreScript.scoreValue += 10);
-     
+        if (ScoreScript.scoreValue != null)
+        {
+            OnDieEvent.Invoke(ScoreScript.scoreValue += 10);
+        }
+
         if (gameObject != null)
         {
-            animator.SetTrigger("Died");
+            if (animator != null)
+            {
+                animator.SetTrigger("Died");
+            }
+
+            if (Explosion != null)
+            {
+                Explosion.Play();
+            }
+
+            // Instantiate the heart prefab at the enemy's position
+            if (heartPrefab != null)
+            {
+                if (true){
+                Instantiate(heartPrefab, transform.position, Quaternion.identity);
+            }
+            }
+
             Destroy(gameObject, 0.5f);
-            Explosion.Play();
         }
     }
 }
