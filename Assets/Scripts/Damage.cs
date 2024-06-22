@@ -13,7 +13,7 @@ public class Damage : MonoBehaviour
     private DamageP damageP;
 
     [SerializeField]
-    private GameObject heartPrefab; // Add a reference to the heart prefab
+    private GameObject heartPrefab;
 
     void Start()
     {
@@ -56,12 +56,13 @@ public class Damage : MonoBehaviour
                 Explosion.Play();
             }
 
-            // Instantiate the heart prefab at the enemy's position
+
             if (heartPrefab != null)
             {
-                if (true){
-                Instantiate(heartPrefab, transform.position, Quaternion.identity);
-            }
+                if (true)
+                {
+                    Instantiate(heartPrefab, transform.position, Quaternion.identity);
+                }
             }
 
             Destroy(gameObject, 0.5f);

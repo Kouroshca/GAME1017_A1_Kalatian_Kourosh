@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PauseScript : MonoBehaviour
 {
-  
+
     public void BackGame()
     {
         SceneManager.LoadScene("Game");

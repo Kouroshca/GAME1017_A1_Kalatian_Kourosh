@@ -27,7 +27,7 @@ public class DamageP : MonoBehaviour
         }
         HitPointPlayer -= AttackValueEnemy;
         Helath.health = HitPointPlayer;
-        
+
         if (HitPointPlayer <= 0)
         {
 
@@ -49,7 +49,7 @@ public class DamageP : MonoBehaviour
             onDeathEvent.Invoke();
         }
     }
-    
+
     public void EndGame()
     {
         SceneManager.LoadScene("GameOver");

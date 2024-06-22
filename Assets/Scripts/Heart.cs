@@ -13,7 +13,7 @@ public class Heart : MonoBehaviour
             {
                 damageP.HitPointPlayer += healthAmount;
                 Debug.Log("hello");
-               Helath.health++;
+                Helath.health++;
                 Destroy(gameObject);
             }
         }

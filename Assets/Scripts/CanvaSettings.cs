@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class CanvaSettings : MonoBehaviour
 {
-    
+
     public Slider volumeSlider;
     public Button playMusic1Buttun;
     public Button playMusic2Buttun;
@@ -15,11 +15,11 @@ public class CanvaSettings : MonoBehaviour
         volumeSlider.onValueChanged.AddListener(SetVolume);
         playMusic1Buttun.onClick.AddListener(PlayMusic1);
         playMusic2Buttun.onClick.AddListener(PlayMusic2);
-        
+
     }
     public void SetVolume(float volume)
     {
-        Debug.Log("Slider "+ volume);
+        Debug.Log("Slider " + volume);
         StartMusic.Instance.SetVolume(volume);
 
     }
